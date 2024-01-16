@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+public class ConvertMapValuesToListEx {
+	public List <String> mapValuesToList(Map <Integer,String> map) {
+    List <String> List = new ArrayList< > (map.values());
+    return List;
+    }
+	public static void main(String[] args) {
+		ConvertMapValuesToListEx maptolist = new ConvertMapValuesToListEx();
+        Map<Integer,String> map = new HashMap < > ();
+        map.put(1, "One");
+        map.put(2, "Two");
+        map.put(3, "Three");
+        List<String>list = maptolist.mapValuesToList(map);
+        System.out.println(list.toString());		
+	}
+}
