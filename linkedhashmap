@@ -1,0 +1,35 @@
+import java.util.LinkedHashMap;
+import java.util.Map;
+public class LinkedHashMapEx1 {
+	public static void main(String[] args) {
+        Map<String, Integer> students = new LinkedHashMap<>();
+        students.put("Venkatesh", 12);
+        students.put("John", 14);
+        students.put("Alice", 15);
+        students.put("Sai",21 );
+        System.out.println(students);
+        int venkateshAge = students.get("Venkatesh");
+        int johnAge = students.get("John");
+        int aliceAge = students.get("Alice");
+        System.out.println("Venkatsh's Age: " + venkateshAge);
+        System.out.println("John's Age: " + johnAge);
+        System.out.println("Alice's Age: " + aliceAge);
+        System.out.println("Sai's Age: "+ students.get("sai"));
+        System.out.println(students);        
+        students.remove("Alice");
+        System.out.println("LinkedHashMap after removing Alice: " + students);        
+        boolean exists = students.containsKey("Venkatesh");
+        System.out.println("Does key Venkatesh exist " + exists);
+        System.out.println("Does key Sai exist " +students.containsKey("Sai"));        
+        exists = students.containsValue(14);
+        System.out.println("Does value 15 exist " + exists);
+        System.out.println("Does value 12 exist "+ students.containsValue(12));        
+        System.out.println("Using forEach and lambda expression");
+        students.forEach((key, value) -> System.out.println("Key: " + key + ", Value: " + value));        
+        System.out.println("Using and lambda expression over entrySet");
+        students.entrySet().forEach(entry -> System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue()));            
+        System.out.println("Using iterator forEachRemaining() method over entrySet");
+        students.entrySet().iterator().forEachRemaining(entry -> System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue()));
+               
+        }
+}
