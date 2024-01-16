@@ -1,0 +1,40 @@
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+public class LinkedHashSetEx1 {
+	public static void main(String[] args) {
+        LinkedHashSet<String> lhs = new LinkedHashSet<String>();
+        lhs.add("Apple");
+        lhs.add("Orange");
+        lhs.add("Banana");
+        lhs.add("Pineapple");
+        lhs.add("Apple");// This will not be inserted as "Apple" is already present in the set
+        lhs.add(null);
+        lhs.add(null);// This will not be inserted as null is already present in the set
+        System.out.println(lhs); 
+        Iterator<String> iterator = lhs.iterator();
+        System.out.println("\nafter using iterator");
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println("\nafter using for-each loop");
+        for(String fruit : lhs) {
+            System.out.println(fruit);
+        }
+        System.out.println("\nIterating using Java forEach method:");
+        lhs.forEach(element ->  System.out.println(element));
+        System.out.println("Original LinkedHashSet: " + lhs);
+        System.out.println("\nafter using remove");
+        lhs.remove("Orange");
+        System.out.println("LinkedHashSet after removing Orange: " + lhs);
+        System.out.println("\nafter using remove an element which does not exist");
+        boolean isRemoved = lhs.remove("Grapes");
+        System.out.println("is Grapes removed: " + isRemoved);
+        System.out.println("LinkedHashSet: " + lhs);
+        System.out.println("\nafter using contains Apple");
+        boolean found = lhs.contains("Apple");
+        System.out.println("is Apple in the LinkedHashSet " + found);
+        System.out.println("is Apple in the LinkedHashSet " + lhs.contains("Apple"));
+        System.out.println("\nafter using contains Grapes");
+        System.out.println("is Grapes in the LinkedHashSet " + lhs.contains("Grapes"));
+	}
+}
