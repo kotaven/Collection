@@ -1,0 +1,20 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+public class ConvertMapToArrayEx {
+	 public String[] mapValuesToArray(Map <Integer,String>map) {
+	     Collection<String>values = map.values();
+	     String[] Array = values.toArray(new String[values.size()]);
+	     return Array;
+	    }
+	public static void main(String[] args) {
+		ConvertMapToArrayEx mapToArray = new ConvertMapToArrayEx();
+        Map<Integer,String>map = new HashMap< >();
+        map.put(1, "One");
+        map.put(2, "Two");
+        map.put(3, "Three");
+        String[] Array = mapToArray.mapValuesToArray(map);
+        System.out.println(Arrays.toString(Array));
+	}
+}
