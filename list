@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.List;
+public class ListEx1 {
+    public static void main(String[] args) {
+        List <String> list = new ArrayList < > ();
+        list.add("apple");
+        list.add("banana");
+        list.add("mango");
+        list.add("orange");
+        list.add("orange");
+        System.out.println(list);
+        list.add(null);
+        list.add(null);
+        System.out.println(list);
+        list.add("apple1"); // 0
+        list.add("banana2"); // 1
+        list.add("mango4"); // 2
+        list.add("orange3"); // 3
+        System.out.println(list);
+        System.out.println(list.get(0));
+        System.out.println(list.get(3));
+       
+    }
+}
