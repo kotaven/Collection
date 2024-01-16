@@ -1,0 +1,34 @@
+import java.util.HashSet;
+import java.util.Iterator;
+public class HashSetEx1 {
+	public static void main(String[] args) {
+        HashSet<String> set = new HashSet<>();
+        set.add("java");
+        set.add("sql");
+        set.add("javaScript");
+        set.add("html");
+        set.add("css");
+        System.out.println(set);
+        set.add("java");
+        set.add("html");
+        set.add(null);
+        set.add(null);
+        System.out.println("after adding the duplicate and null "+set);
+        System.out.println("after iterator: ");
+        Iterator<String> iterator = set.iterator();
+        while(iterator.hasNext()){
+            String language = iterator.next();
+            System.out.println(language);
+        }
+        System.out.println(set);
+        set.remove("html");
+        System.out.println("After remove('html'): " + set);
+        System.out.println("after advance for loop");
+        for (String str : set) {
+            System.out.println(str);
+        }
+        System.out.println("after using forEach");
+        set.forEach(str -> System.out.println(str));
+	}
+
+}
