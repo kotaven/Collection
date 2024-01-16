@@ -1,0 +1,9 @@
+import java.util.Arrays;
+import java.util.List;
+public class ConvertListToArrayEx {
+	public static void main(String[] args) {
+	    List<Integer> list = Arrays.asList(0, 1, 2, 3, 4, 5);
+	    Integer[] Array = list.toArray(new Integer[list.size()]);
+	    System.out.println(Arrays.toString(Array));
+	}
+}
